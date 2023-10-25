@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>
-    How many counties in the United States have the Maasen family visited?
+    How many counties in the United States have the Clark family visited?
   </h1>
   <div class="d-flex align-items-center w-100 m-3" v-if="loading">
     <strong class="mx-5">Loading...</strong>
@@ -138,7 +138,7 @@ export default {
       totalBarHeight: 25,
 
       // input options
-      selectedPeople: ["Karol", "Bob"]
+      selectedPeople: ["Jackie", "Russ"]
     })
   },
   computed: {
@@ -205,10 +205,10 @@ export default {
           population (est. 2019): ${feature.properties.population}
           </div>
           <div>
-          Karol: ${feature.properties.karol ? '<i class="fas fa-square"></i>' : '<i class="far fa-square"></i>'}
+          Jackie: ${feature.properties.jackie ? '<i class="fas fa-square"></i>' : '<i class="far fa-square"></i>'}
           </div>
           <div>
-          Bob: ${feature.properties.bob ? '<i class="fas fa-square"></i>' : '<i class="far fa-square"></i>'}
+          Russ: ${feature.properties.russ ? '<i class="fas fa-square"></i>' : '<i class="far fa-square"></i>'}
           </div>
           <div>
           land area: ${feature.properties.ALAND.toLocaleString()} sq. m

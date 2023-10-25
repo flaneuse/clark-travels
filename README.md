@@ -1,5 +1,5 @@
-# maasen-travels
- Maps of where the Maasen family have been in the United States
+# clark-travels
+ Maps of where the Clark family have been in the United States
 
 # Local development
 1. Create a Google API key.
@@ -13,4 +13,4 @@
 * Add `VUE_APP_GOOGLESHEETS_API_KEY` as a secret key.
 * Create a gh-pages branch
 * Point branch in GitHub Pages build and deploy to point to `gh-pages` branch and `/docs` folder.
-* With [deploy-app.yml](https://github.com/flaneuse/maasen-travels/blob/main/.github/workflows/deploy-app.yml), on commit to the main branch, the site will be built and saved within the docs folder for rendering.
+* With [deploy-app.yml](https://github.com/flaneuse/clark-travels/blob/main/.github/workflows/deploy-app.yml), on commit to the main branch, the site will be built and saved within the docs folder for rendering.

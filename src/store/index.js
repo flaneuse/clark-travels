@@ -40,7 +40,7 @@ const calcTotal = function(results, person, totalCounties, totalBarWidth = 300) 
 export default new Vuex.Store({
   state: {
     loading: false,
-    people: ["Karol", "Bob"],
+    people: ["Jackie", "Russ"],
     geojson: null,
     states: null,
     totals: null,
@@ -51,15 +51,15 @@ export default new Vuex.Store({
       //   color: "#a65628",
       //   label: "all"
       // },
-      "Bob": {
+      "Russ": {
         color: "#e41a1c",
         lightColor: "#fdd3d3",
-        label: "Bob"
+        label: "Russ"
       },
-      "Karol": {
+      "Jackie": {
         color: "#3773b8",
         lightColor: "#cee5ff",
-        label: "Karol"
+        label: "Jackie"
       },
       // "Laura": {
       //   color: "#ffff33",
@@ -74,9 +74,9 @@ export default new Vuex.Store({
       //   color: "#4daf4a",
       //   label: "Nancy & Laura"
       // },
-      "kb": {
+      "both": {
         color: "#984ea3",
-        label: "Karol & Bob"
+        label: "Jackie & Russ"
       },
       "unknown": {
         color: "#babab0",
@@ -92,7 +92,7 @@ export default new Vuex.Store({
       const reader = require('g-sheets-api');
       const readerOptions = {
         apiKey: process.env.VUE_APP_GOOGLESHEETS_API_KEY,
-        sheetId: '1_nvgo6gKDWsB38Csn2yX1rbcVQQ2IBOaFic1rz4KBV0', // Link to Google sheet. Should have permissions set to "anyone with link can view"
+        sheetId: '1WlkCAcgixAVFQLyuirGtBmwRBdIvus2gv1tie0a_azY', // Link to Google sheet. Should have permissions set to "anyone with link can view"
         sheetName: 'us_counties',
         returnAllResults: true
       };
@@ -140,16 +140,16 @@ export default new Vuex.Store({
             d["properties"]["population"] = filtered[0].population_2019;
             d["properties"]["state"] = filtered[0].state;
 
-            const karol = filtered[0].Karol === "1";
-            const bob = filtered[0].Bob === "1";
+            const jackie = filtered[0].Jackie === "1";
+            const russ = filtered[0].Russ === "1";
 
             // calculating the color
-            const value = karol && bob ? "kb" :
-              karol ? "Karol" :
-              bob ? "Bob" :
+            const value = jackie && russ ? "both" :
+              jackie ? "Jackie" :
+              russ ? "Russ" :
               "unknown";
-            d["properties"]["karol"] = karol;
-            d["properties"]["bob"] = bob;
+            d["properties"]["jackie"] = jackie;
+            d["properties"]["russ"] = russ;
 
             d["properties"]["fillColor"] = value; //this.colorPalette[value].color;
           }
